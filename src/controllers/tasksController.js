@@ -10,11 +10,11 @@ const getAllTask = () => {
 }
 
 const getTask = async (_id) => {
-    return await Task.findOne({id})
+    return await Task.findOne({_id})
 }
 
 const deleteTask = async (_id) => {
-    return await Task.findOneAndDelete(id)
+    return await Task.findOneAndDelete(_id)
 }
 
 const updateTask = async (id, task) => {
