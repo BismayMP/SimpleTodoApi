@@ -11,11 +11,11 @@ router.get('/:id', async (req, res, next) =>
 )
 
 router.put('/:id', async (req, res, next) =>
-  (req.body) ? res.json(await updateTask(req.params.id, req.body )) : res.status(400)
+  res.json(await updateTask(req.params.id, req.body ))
 )
 
 router.post('/', async (req, res, next) =>
-  (req.body) ? res.json(await insertTask(req.body)) : res.status(400)
+  res.json(await insertTask(req.body))
 )
 
 router.delete('/:id', async (req, res, next) =>
