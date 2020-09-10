@@ -1,0 +1,23 @@
+version: '3'
+services:
+  api:
+    container_name: api
+    restart: always
+    build: ./
+    ports:
+      - '3010:3010'
+    volumes:
+      - .:/api
+    links:
+      - mongo
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - '27017:27017'
+    environment:
+      - MONGO_HOST=mongo
+      - MONGO_PORT=27017
+      - MONGO_DB_NAME=todo_api
+    restart: always

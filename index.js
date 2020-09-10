@@ -1,9 +1,11 @@
 const express = require("express");
 const app = express();
 const taskRoutes = require("./src/routes");
+//mongodb connection
+const { mongoose } = require('./src/db')
 
 //settings
-app.set("port", process.env.PORT || 8080);
+app.set("port", 3010 || 8080);
 
 //middlewares
 app.use(express.json());
